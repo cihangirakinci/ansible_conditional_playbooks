@@ -1,0 +1,13 @@
+---
+- name: Condition 1
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Ping Servers
+      ping:
+      register: task1_result
+
+    - name: Print OS Information
+      debug:
+        msg: "{{ ansible_distribution }}"
+      when: task1_result is succeeded 
