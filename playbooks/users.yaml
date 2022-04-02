@@ -1,0 +1,13 @@
+---
+- name: Add new users to servers
+  hosts: web2
+  gather_facts: no
+  tasks:
+    - name: Add several users
+      user:
+        name: '{{ item }}'
+      loop:
+        - Bob
+        - Anna
+        - Amy
+        - Tom

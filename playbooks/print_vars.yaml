@@ -1,0 +1,13 @@
+---
+- name: Ping
+  hosts: web2
+  gather_facts: no
+  vars_files:
+    - ../var_files/vars_print_vars.yml
+  tasks:
+    - name: Ping
+      ping:
+
+    - name: Debug
+      debug:
+        msg: "{{ message }}"

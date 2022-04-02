@@ -1,0 +1,12 @@
+---
+- name: Update and Restart 
+  hosts: web2
+  gather_facts: no
+  tasks:
+    - name: Update all packages
+      yum:
+        name: '*'
+        state: latest
+    - name: Restart Server
+      reboot:
+        msg: 'Reboot'

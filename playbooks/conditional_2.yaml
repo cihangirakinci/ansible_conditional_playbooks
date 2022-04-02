@@ -1,0 +1,16 @@
+---
+- name: Ping and Create file
+  hosts: web2
+  gather_facts: no
+  tasks:
+    - name: Ping
+      ping:
+      register: task1
+
+    - name: If task1 is good, create a file
+      copy:
+        dest: "/root/test.txt"
+        content:
+          this is line1
+          this is line2
+      when: task1 is succeeded
