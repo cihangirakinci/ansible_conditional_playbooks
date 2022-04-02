@@ -1,5 +1,14 @@
 ---
 all:
   hosts:
-    10.108.0.2:
+    10.108.0.10:
     10.108.0.3:
+  children:
+    dev:
+      hosts:
+        web1:
+          ansible_host: 10.108.0.10
+          ansible_port: 22
+        web2:
+          ansible_host: 10.108.0.3
+          ansible_port: 7789
