@@ -1,0 +1,10 @@
+---
+- name: 
+  hosts: all
+  gather_facts: no
+  vars:
+    message: "This is test message"
+  tasks:
+    - name:
+      debug:
+        msg: "{{ message }}"
